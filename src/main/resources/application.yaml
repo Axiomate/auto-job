@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: auto-job
+  datasource:
+    url: jdbc:postgresql://localhost:5432/cold_email
+    username: postgres
+    password: "AMD99#gch"
+    hikari:
+       maximum-pool-size: 10
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: nebinmohammed.sa.007@gmail.com
+    password: knyc iqac tngk rquu
+    properties:
+      mail.smtp.auth: true
+      mail.smtp.starttls.enable: true
+      mail.debug: true
+
+  ai:
+    google:
+      genai:
+        project-id: "gen-lang-client-0034025828" # This was missing!
+        api-key: "AIzaSyA5NGOXLDWO-_WstVqcOvn0Ubz66ZJ0Qqs"
+        chat:
+          options:
+            model: gemini-1.5-flash
+            temperature: 0.7
+            max-tokens: 2048
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    locations: classpath:db/migration
